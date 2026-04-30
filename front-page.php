@@ -156,18 +156,18 @@ $journal_posts = [
 	<div class="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/30 to-transparent"></div>
 	<div class="hero__inner section-inner z-20">
 		<div class="hero__copy reveal">
-			<div class="signal-pill"><span></span><?php esc_html_e('Licensed PRC Real Estate Brokerage', 'planetario-tailpress'); ?></div>
+			<!-- <div class="signal-pill"><span></span><?php esc_html_e('Licensed PRC Real Estate Brokerage', 'planetario-tailpress'); ?></div> -->
 			<h1><?php esc_html_e("Commited to Change People's Lives", 'planetario-tailpress'); ?> <em><?php esc_html_e('for Progress.', 'planetario-tailpress'); ?></em></h1>
 			<p><?php esc_html_e('Planetario Realty connects Filipino families and discerning investors with extraordinary properties from trusted developers, guided by a team that treats every transaction as a long-term relationship.', 'planetario-tailpress'); ?></p>
 			<div class="hero__actions">
 				<a class="button button--primary" href="#contact"><?php esc_html_e('Book a Consultation', 'planetario-tailpress'); ?><i data-lucide="arrow-right" class="icon icon--button" aria-hidden="true"></i></a>
 				<a class="button button--ghost" href="#developers"><?php esc_html_e('Explore Properties', 'planetario-tailpress'); ?></a>
 			</div>
-			<div class="hero-stats" aria-label="<?php esc_attr_e('Planetario Realty highlights', 'planetario-tailpress'); ?>">
+			<!-- <div class="hero-stats" aria-label="<?php esc_attr_e('Planetario Realty highlights', 'planetario-tailpress'); ?>">
 				<div><strong>12+</strong><span><?php esc_html_e('Years in Realty', 'planetario-tailpress'); ?></span></div>
 				<div><strong>PHP 4.8B</strong><span><?php esc_html_e('Properties Closed', 'planetario-tailpress'); ?></span></div>
 				<div><strong>30+</strong><span><?php esc_html_e('Accredited Devs', 'planetario-tailpress'); ?></span></div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </section>
