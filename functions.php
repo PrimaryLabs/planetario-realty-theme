@@ -29,8 +29,9 @@ function planetario_tailpress_setup(): void
 	add_editor_style('public/css/app.css');
 
 	register_nav_menus([
-		'primary' => __('Primary Menu', 'planetario-tailpress'),
-		'footer'  => __('Footer Menu', 'planetario-tailpress'),
+		'nav-menu' => __('Header Menu', 'planetario-tailpress'),
+		'primary'  => __('Primary Menu', 'planetario-tailpress'),
+		'footer'   => __('Footer Menu', 'planetario-tailpress'),
 	]);
 }
 add_action('after_setup_theme', 'planetario_tailpress_setup');

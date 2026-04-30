@@ -277,6 +277,15 @@ textarea {
 	margin-right: 16px;
 }
 
+.primary-nav__list {
+	display: flex;
+	align-items: center;
+	gap: 2px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
 .primary-nav a,
 .mobile-nav a {
 	color: rgba(255, 255, 255, 0.84);
@@ -379,6 +388,14 @@ textarea {
 .mobile-nav a {
 	display: block;
 	padding: 14px 12px;
+}
+
+.mobile-nav__list {
+	display: grid;
+	gap: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 .hero {

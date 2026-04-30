@@ -18,6 +18,16 @@
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e('Skip to content', 'planetario-tailpress'); ?></a>
+	<?php
+	$planetario_header_menu_exists = has_nav_menu('nav-menu') || wp_get_nav_menu_object('Header Menu');
+	$planetario_header_menu_args   = [
+		'theme_location' => 'nav-menu',
+		'menu'           => 'Header Menu',
+		'container'      => false,
+		'depth'          => 1,
+		'fallback_cb'    => false,
+	];
+	?>
 	<header class="site-header" data-site-header>
 		<div class="site-header__inner">
 			<div class="brand mr-auto">
@@ -36,12 +46,26 @@
 			</div>
 
 			<nav class="primary-nav" aria-label="<?php esc_attr_e('Primary navigation', 'planetario-tailpress'); ?>">
-				<a href="<?php echo esc_url(home_url('/about/')); ?>"><?php esc_html_e('About', 'planetario-tailpress'); ?></a>
-				<a href="<?php echo esc_url(home_url('/#team')); ?>"><?php esc_html_e('Team', 'planetario-tailpress'); ?></a>
-				<a href="<?php echo esc_url(home_url('/#developers')); ?>"><?php esc_html_e('Developers', 'planetario-tailpress'); ?></a>
-				<a href="<?php echo esc_url(home_url('/#stories')); ?>"><?php esc_html_e('Success Stories', 'planetario-tailpress'); ?></a>
-				<a href="<?php echo esc_url(home_url('/#testimonials')); ?>"><?php esc_html_e('Testimonials', 'planetario-tailpress'); ?></a>
-				<a href="<?php echo esc_url(home_url('/#blog')); ?>"><?php esc_html_e('Blog', 'planetario-tailpress'); ?></a>
+				<?php if ($planetario_header_menu_exists) : ?>
+					<?php
+					wp_nav_menu(
+						array_merge(
+							$planetario_header_menu_args,
+							[
+								'menu_id'    => 'header-menu',
+								'menu_class' => 'primary-nav__list',
+							]
+						)
+					);
+					?>
+				<?php else : ?>
+					<a href="<?php echo esc_url(home_url('/about/')); ?>"><?php esc_html_e('About', 'planetario-tailpress'); ?></a>
+					<a href="<?php echo esc_url(home_url('/#team')); ?>"><?php esc_html_e('Team', 'planetario-tailpress'); ?></a>
+					<a href="<?php echo esc_url(home_url('/#developers')); ?>"><?php esc_html_e('Developers', 'planetario-tailpress'); ?></a>
+					<a href="<?php echo esc_url(home_url('/#stories')); ?>"><?php esc_html_e('Success Stories', 'planetario-tailpress'); ?></a>
+					<a href="<?php echo esc_url(home_url('/#testimonials')); ?>"><?php esc_html_e('Testimonials', 'planetario-tailpress'); ?></a>
+					<a href="<?php echo esc_url(home_url('/#blog')); ?>"><?php esc_html_e('Blog', 'planetario-tailpress'); ?></a>
+				<?php endif; ?>
 			</nav>
 
 			<a class="header-cta" href="<?php echo esc_url(home_url('/#contact')); ?>"><?php esc_html_e('Get in Touch', 'planetario-tailpress'); ?></a>
@@ -55,13 +79,27 @@
 		</div>
 
 		<div id="mobile-menu" class="mobile-nav" hidden data-mobile-menu>
-			<a href="<?php echo esc_url(home_url('/about/')); ?>"><?php esc_html_e('About', 'planetario-tailpress'); ?></a>
-			<a href="<?php echo esc_url(home_url('/#team')); ?>"><?php esc_html_e('Team', 'planetario-tailpress'); ?></a>
-			<a href="<?php echo esc_url(home_url('/#developers')); ?>"><?php esc_html_e('Developers', 'planetario-tailpress'); ?></a>
-			<a href="<?php echo esc_url(home_url('/#stories')); ?>"><?php esc_html_e('Success Stories', 'planetario-tailpress'); ?></a>
-			<a href="<?php echo esc_url(home_url('/#testimonials')); ?>"><?php esc_html_e('Testimonials', 'planetario-tailpress'); ?></a>
-			<a href="<?php echo esc_url(home_url('/#blog')); ?>"><?php esc_html_e('Blog', 'planetario-tailpress'); ?></a>
-			<a href="<?php echo esc_url(home_url('/#contact')); ?>"><?php esc_html_e('Get in Touch', 'planetario-tailpress'); ?></a>
+			<?php if ($planetario_header_menu_exists) : ?>
+				<?php
+				wp_nav_menu(
+					array_merge(
+						$planetario_header_menu_args,
+						[
+							'menu_id'    => 'mobile-header-menu',
+							'menu_class' => 'mobile-nav__list',
+						]
+					)
+				);
+				?>
+			<?php else : ?>
+				<a href="<?php echo esc_url(home_url('/about/')); ?>"><?php esc_html_e('About', 'planetario-tailpress'); ?></a>
+				<a href="<?php echo esc_url(home_url('/#team')); ?>"><?php esc_html_e('Team', 'planetario-tailpress'); ?></a>
+				<a href="<?php echo esc_url(home_url('/#developers')); ?>"><?php esc_html_e('Developers', 'planetario-tailpress'); ?></a>
+				<a href="<?php echo esc_url(home_url('/#stories')); ?>"><?php esc_html_e('Success Stories', 'planetario-tailpress'); ?></a>
+				<a href="<?php echo esc_url(home_url('/#testimonials')); ?>"><?php esc_html_e('Testimonials', 'planetario-tailpress'); ?></a>
+				<a href="<?php echo esc_url(home_url('/#blog')); ?>"><?php esc_html_e('Blog', 'planetario-tailpress'); ?></a>
+				<a href="<?php echo esc_url(home_url('/#contact')); ?>"><?php esc_html_e('Get in Touch', 'planetario-tailpress'); ?></a>
+			<?php endif; ?>
 		</div>
 	</header>
 	<main id="main">
