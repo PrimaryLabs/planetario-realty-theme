@@ -154,6 +154,14 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+.font-sora {
+	font-family: Sora, ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-manrope {
+	font-family: Manrope, ui-sans-serif, system-ui, sans-serif;
+}
+
 body.has-open-menu {
 	overflow: hidden;
 }
@@ -218,8 +226,7 @@ textarea {
 	top: 32px;
 }
 
-.site-header.is-scrolled,
-.site-header:focus-within {
+.site-header.is-scrolled {
 	background: rgba(247, 251, 253, 0.9);
 	backdrop-filter: blur(10px);
 	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
@@ -401,7 +408,6 @@ textarea {
 .hero {
 	position: relative;
 	min-height: 100svh;
-	overflow: hidden;
 	color: #fff;
 	background: var(--navy-deep);
 }
@@ -481,9 +487,9 @@ textarea {
 .hero h1 {
 	max-width: 880px;
 	margin-top: 24px;
-	font-size: clamp(2rem, 8vw, 4rem);
 	font-weight: 600;
 	line-height: 1.02;
+	@apply text-center xl:text-left text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
 }
 
 .hero h1 em,
@@ -496,27 +502,26 @@ textarea {
 
 .hero p {
 	max-width: 640px;
-	margin: 28px 0 0;
+	margin-top: 28px;
 	color: rgba(255, 255, 255, 0.78);
 	font-size: clamp(1.05rem, 2vw, 1.25rem);
-	line-height: 1.7;
+	@apply text-center xl:text-left leading-7;
 }
 
 .hero__actions {
-	display: flex;
-	flex-wrap: wrap;
 	gap: 12px;
 	margin-top: 40px;
+	@apply flex flex-wrap items-center justify-center xl:justify-start;
 }
 
 .hero-stats {
 	display: grid;
-	max-width: 640px;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 28px;
 	margin-top: 64px;
 	padding-top: 28px;
 	border-top: 1px solid rgba(255, 255, 255, 0.16);
+	@apply w-full;
 }
 
 .hero-stats strong {
@@ -547,7 +552,12 @@ textarea {
 	letter-spacing: 0.22em;
 	text-transform: uppercase;
 }
-
+.hero-trust-indicator-container {
+	@apply w-full absolute z-20 bottom-8 left-0 flex items-center justify-center overflow-visible h-24;
+}
+.hero-trust-indicators {
+	@apply w-full max-w-7xl mx-auto h-full bottom-0 p-4 rounded-xl shadow-xl;
+}
 .section {
 	position: relative;
 	padding-block: clamp(88px, 12vw, 152px);
@@ -1494,11 +1504,6 @@ textarea {
 
 	.about-hero__inner {
 		padding-block: 132px 68px;
-	}
-
-	.hero h1 {
-		font-size: clamp(1rem, 9vw, 5.5rem);
-		line-height: 1.3em;
 	}
 
 	.hero-stats,

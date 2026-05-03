@@ -7,7 +7,28 @@
  */
 
 get_header();
-
+$trust_indicators = [
+	[
+		'icon'  => 'shield-check',
+		'title' => __('Trusted Services', 'planetario-tailpress'),
+		'copy'  => __('Build on integrity, and long term relationships', 'planetario-tailpress'),
+	],
+	[
+		'icon'  => 'users',
+		'title' => __('Client Focused', 'planetario-tailpress'),
+		'copy'  => "Your goals, our priority. \nAlways",
+	],
+	[
+		'icon'  => 'heart-handshake',
+		'title' => __('Transparent Transactions', 'planetario-tailpress'),
+		'copy'  => __('Clear, smooth, and hassle-free processes', 'planetario-tailpress'),
+	],
+	[
+		'icon'  => 'chart-no-axes-combined',
+		'title' => __('Market Expertise', 'planetario-tailpress'),
+		'copy'  => __('In-deph knowledge for smarter decissions', 'planetario-tailpress'),
+	],
+];
 $features = [
 	[
 		'icon'  => 'shield-check',
@@ -154,22 +175,36 @@ $journal_posts = [
 	<img class="hero__image" src="<?php echo planetario_tailpress_image('hero-DqwsNBEx.jpg'); ?>" alt="<?php esc_attr_e('Aerial view of a luxury Filipino residential community at golden hour', 'planetario-tailpress'); ?>">
 	<div class="hero__overlay"></div>
 	<div class="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/30 to-transparent"></div>
-	<div class="hero__inner section-inner z-20">
-		<div class="hero__copy reveal">
-			<!-- <div class="signal-pill"><span></span><?php esc_html_e('Licensed PRC Real Estate Brokerage', 'planetario-tailpress'); ?></div> -->
+	<div class="hero__inner section-inner z-20 relative">
+		<div class="hero__copy mx-auto xl:mx-0 flex flex-col">
+			<div class="relative text-center xl:text-left">
+				<span class="!text-md !tracking-widest font-thin uppercase">
+					Your Trusted Real Estate Partner
+				</span>
+				<span class="border-b-2 border-b-slate-200 w-1/3 absolute right-1/3 xl:left-0 translate-x--full bottom-0 opacity-25"></span>
+			</div>
 			<h1><?php esc_html_e("Commited to Change People's Lives", 'planetario-tailpress'); ?> <em><?php esc_html_e('for Progress.', 'planetario-tailpress'); ?></em></h1>
-			<p><?php esc_html_e('Planetario Realty connects Filipino families and discerning investors with extraordinary properties from trusted developers, guided by a team that treats every transaction as a long-term relationship.', 'planetario-tailpress'); ?></p>
+			<p class="mx-auto xl:mx-0"><?php esc_html_e('Planetario Realty connects Filipino families and discerning investors with extraordinary properties from trusted developers, guided by a team that treats every transaction as a long-term relationship.', 'planetario-tailpress'); ?></p>
 			<div class="hero__actions">
 				<a class="button button--primary" href="#contact"><?php esc_html_e('Book a Consultation', 'planetario-tailpress'); ?><i data-lucide="arrow-right" class="icon icon--button" aria-hidden="true"></i></a>
 				<a class="button button--ghost" href="#developers"><?php esc_html_e('Explore Properties', 'planetario-tailpress'); ?></a>
 			</div>
-			<!-- <div class="hero-stats" aria-label="<?php esc_attr_e('Planetario Realty highlights', 'planetario-tailpress'); ?>">
-				<div><strong>12+</strong><span><?php esc_html_e('Years in Realty', 'planetario-tailpress'); ?></span></div>
-				<div><strong>PHP 4.8B</strong><span><?php esc_html_e('Properties Closed', 'planetario-tailpress'); ?></span></div>
-				<div><strong>30+</strong><span><?php esc_html_e('Accredited Devs', 'planetario-tailpress'); ?></span></div>
-			</div> -->
+		</div>
+		<div class="xl:absolute xl:top-0 w-full flex items-center justify-center xl:justify-end xl:h-full right-0 xl:pr-10 bottom-4 pt-10 xl:pt-0">
+			<div class=" grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-4 lg:gap-y-8">
+				<?php foreach ($trust_indicators as $indicator) : ?>
+					<div class="bg-white/5 rounded-lg border border-slate-200/50 p-4 backdrop-blur-sm flex items-center gap-4">
+						<div class="icon-badge !mb-0" aria-hidden="true"><i data-lucide="<?php echo esc_attr($indicator['icon']); ?>" class="icon icon--feature"></i></div>
+						<div class="flex-col">
+							<h4 class="text-amber-soft font-bold text-sm !m-0"><?php echo esc_html($indicator['title']); ?></h4>
+							<p class="!text-xs text-gray-300 !mt-0"><?php echo esc_html($indicator['copy']); ?></p>
+						</div>
+					</div>
+				<?php endforeach; ?>
+			</div>
 		</div>
 	</div>
+
 </section>
 
 <section id="about" class="section section--light">
@@ -185,7 +220,7 @@ $journal_posts = [
 				<article class="feature-card reveal">
 					<div class="icon-badge" aria-hidden="true"><i data-lucide="<?php echo esc_attr($feature['icon']); ?>" class="icon icon--feature"></i></div>
 					<h3><?php echo esc_html($feature['title']); ?></h3>
-					<p><?php echo esc_html($feature['copy']); ?></p>
+					<p class=""><?php echo nl2br($feature['copy']); ?></p>
 				</article>
 			<?php endforeach; ?>
 		</div>

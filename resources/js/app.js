@@ -11,6 +11,9 @@ import {
 	ShieldCheck,
 	Sparkles,
 	Target,
+	Users,
+	HeartHandshake,
+	ChartNoAxesCombined,
 } from "lucide";
 
 createIcons({
@@ -25,6 +28,9 @@ createIcons({
 		ShieldCheck,
 		Sparkles,
 		Target,
+		Users,
+		HeartHandshake,
+		ChartNoAxesCombined,
 	},
 });
 
