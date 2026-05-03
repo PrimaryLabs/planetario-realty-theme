@@ -191,9 +191,10 @@ $journal_posts = [
 			</div>
 			<h1 class="motion-preset-slide-up motion-opacity-in-0 motion-duration-700 motion-delay-150"><?php esc_html_e("Commited to Change People's Lives", 'planetario-tailpress'); ?> <em><?php esc_html_e('for Progress.', 'planetario-tailpress'); ?></em></h1>
 			<p class="mx-auto xl:mx-0 motion-preset-slide-up motion-opacity-in-0 motion-duration-700 motion-delay-300"><?php esc_html_e('Planetario Realty connects Filipino families and discerning investors with extraordinary properties from trusted developers, guided by a team that treats every transaction as a long-term relationship.', 'planetario-tailpress'); ?></p>
-			<div class="hero__actions motion-preset-slide-up motion-opacity-in-0 motion-duration-700 motion-delay-500">
-				<a class="button button--primary" href="#contact"><?php esc_html_e('Book a Consultation', 'planetario-tailpress'); ?><i data-lucide="arrow-right" class="icon icon--button" aria-hidden="true"></i></a>
-				<a class="button button--ghost" href="#developers"><?php esc_html_e('Explore Properties', 'planetario-tailpress'); ?></a>
+			<div class="hero__actions motion-preset-slide-up motion-opacity-in-0 motion-duration-700 motion-delay-500 group">
+				<!-- CTA Buttons -->
+				<a class="button button--primary group-hover:!animate-none" href="#contact"><?php esc_html_e('Book a Consultation', 'planetario-tailpress'); ?><i data-lucide="arrow-right" class="icon icon--button" aria-hidden="true"></i></a>
+				<a class="button button--ghost group-hover:!animate-none" href="#developers"><?php esc_html_e('Explore Properties', 'planetario-tailpress'); ?></a>
 			</div>
 		</div>
 		<div class="xl:absolute xl:top-0 w-full flex items-center justify-center xl:justify-end xl:h-full right-0 xl:pr-10 bottom-4 pt-10 xl:pt-0 pointer-events-none">
@@ -203,8 +204,8 @@ $journal_posts = [
 					<div class="trust-indicator-card <?php echo esc_attr($trust_indicator_motion_delays[$index] ?? 'motion-delay-700'); ?>">
 						<div class="icon-badge !mb-0" aria-hidden="true"><i data-lucide="<?php echo esc_attr($indicator['icon']); ?>" class="icon icon--feature"></i></div>
 						<div class="flex-col">
-							<h4 class="font-sora font-bold text-sm !m-0 !mb-1"><?php echo esc_html($indicator['title']); ?></h4>
-							<p class="!text-xs text-gray-300 !mt-0"><?php echo esc_html($indicator['copy']); ?></p>
+							<h4 class="font-sora font-bold text-sm !m-0"><?php echo esc_html($indicator['title']); ?></h4>
+							<p class="!text-xs text-gray-300 !m-0"><?php echo esc_html($indicator['copy']); ?></p>
 						</div>
 					</div>
 				<?php endforeach; ?>

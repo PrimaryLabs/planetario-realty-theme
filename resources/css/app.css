@@ -589,6 +589,27 @@ textarea {
 	@apply flex flex-wrap items-center justify-center xl:justify-start;
 }
 
+.hero__actions .button {
+	animation: cta-button-lift 3s ease-in-out infinite;
+}
+
+.hero__actions .button:nth-child(2) {
+	animation-delay: 1.5s;
+}
+
+@keyframes cta-button-lift {
+	0%,
+	40%,
+	100% {
+		translate: 0 0;
+	}
+
+	15%,
+	25% {
+		translate: 0 -2px;
+	}
+}
+
 .hero-stats {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -1645,5 +1666,10 @@ textarea {
 	.reveal {
 		opacity: 1;
 		transform: none;
+	}
+
+	.hero__actions .button {
+		animation: none;
+		translate: 0 0;
 	}
 }
