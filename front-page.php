@@ -179,14 +179,14 @@ $journal_posts = [
 <section id="top" class="hero relative h-screen">
 	<img class="hero__image" src="<?php echo planetario_tailpress_image('hero-DqwsNBEx.jpg'); ?>" alt="<?php esc_attr_e('Aerial view of a luxury Filipino residential community at golden hour', 'planetario-tailpress'); ?>">
 	<div class="hero__overlay"></div>
-	<div class="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/30 to-transparent"></div>
+	<div class="absolute inset-0 bg-gradient-to-t from-[#000000]/25 via-[#000000]/10 to-transparent"></div>
 	<div class="hero__inner section-inner z-20 relative">
 		<div class="hero__copy mx-auto xl:mx-0 flex flex-col">
 			<div class="relative text-center xl:text-left motion-preset-slide-up motion-opacity-in-0 motion-duration-700">
 				<!-- <span class="!text-md !tracking-widest font-thin uppercase">
 					Your Trusted Real Estate Partner
 				</span> -->
-				<p class="eyebrow !text-xs !my-2">Your Trusted Real Estate Partner</p>
+				<p class="eyebrow !text-xs !my-2 !text-center xl:!text-left !ml-auto !mr-auto xl:!ml-0">Your Trusted Real Estate Partner</p>
 				<span class="border-b border-b-slate-200 w-1/3 absolute right-1/3 xl:left-0 translate-x--full bottom-0 opacity-25"></span>
 			</div>
 			<h1 class="motion-preset-slide-up motion-opacity-in-0 motion-duration-700 motion-delay-150"><?php esc_html_e("Commited to Change People's Lives", 'planetario-tailpress'); ?> <em><?php esc_html_e('for Progress.', 'planetario-tailpress'); ?></em></h1>
