@@ -585,8 +585,7 @@ textarea {
 
 .hero__actions {
 	gap: 16px;
-	margin-top: 40px;
-	@apply flex flex-wrap items-center justify-center xl:justify-start;
+	@apply mt-5 md:mt-10 flex flex-wrap items-center justify-center xl:justify-start;
 }
 
 .hero__actions .button {
@@ -595,6 +594,33 @@ textarea {
 
 .hero__actions .button:nth-child(2) {
 	animation-delay: 1.5s;
+}
+
+.hero-scroll-cue {
+	position: absolute;
+	left: 50%;
+	bottom: 24px;
+	z-index: 30;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	color: rgba(255, 255, 255, 0.72);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	translate: -50% 0;
+	animation: hero-scroll-cue-float 1.8s ease-in-out infinite;
+}
+
+.hero-scroll-cue .icon {
+	width: 14px;
+	height: 14px;
+	stroke-width: 2;
+}
+
+.hero-scroll-cue:hover {
+	color: #fff;
 }
 
 @keyframes cta-button-lift {
@@ -607,6 +633,19 @@ textarea {
 	15%,
 	25% {
 		translate: 0 -2px;
+	}
+}
+
+@keyframes hero-scroll-cue-float {
+	0%,
+	100% {
+		opacity: 0.58;
+		translate: -50% 0;
+	}
+
+	50% {
+		opacity: 1;
+		translate: -50% 6px;
 	}
 }
 
@@ -1590,7 +1629,7 @@ textarea {
 	}
 
 	.hero__inner {
-		padding-block: 124px 56px;
+		padding-block: 74px 56px;
 	}
 
 	.about-hero,
@@ -1671,5 +1710,11 @@ textarea {
 	.hero__actions .button {
 		animation: none;
 		translate: 0 0;
+	}
+
+	.hero-scroll-cue {
+		animation: none;
+		opacity: 1;
+		translate: -50% 0;
 	}
 }

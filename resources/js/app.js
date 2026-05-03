@@ -14,6 +14,7 @@ import {
 	Users,
 	HeartHandshake,
 	ChartNoAxesCombined,
+	ChevronsDown,
 } from "lucide";
 
 createIcons({
@@ -31,6 +32,7 @@ createIcons({
 		Users,
 		HeartHandshake,
 		ChartNoAxesCombined,
+		ChevronsDown,
 	},
 });
 

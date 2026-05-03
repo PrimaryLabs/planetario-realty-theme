@@ -197,10 +197,10 @@ $journal_posts = [
 				<a class="button button--ghost group-hover:!animate-none" href="#developers"><?php esc_html_e('Explore Properties', 'planetario-tailpress'); ?></a>
 			</div>
 		</div>
-		<div class="xl:absolute xl:top-0 w-full flex items-center justify-center xl:justify-end xl:h-full right-0 xl:pr-10 bottom-4 pt-10 xl:pt-0 pointer-events-none">
+		<div class="xl:absolute xl:top-0 w-full flex items-center justify-center xl:justify-end xl:h-full right-0 xl:pr-10 bottom-4 pt-10 xl:pt-0 pointer-events-none pb-5">
+			<!-- TRUST INDICATORS LIST -->
 			<div class=" grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-2 lg:gap-y-8">
 				<?php foreach ($trust_indicators as $index => $indicator) : ?>
-					<!-- TRUST INDICATORS -->
 					<div class="trust-indicator-card <?php echo esc_attr($trust_indicator_motion_delays[$index] ?? 'motion-delay-700'); ?>">
 						<div class="icon-badge !mb-0" aria-hidden="true"><i data-lucide="<?php echo esc_attr($indicator['icon']); ?>" class="icon icon--feature"></i></div>
 						<div class="flex-col">
@@ -212,6 +212,10 @@ $journal_posts = [
 			</div>
 		</div>
 	</div>
+	<a class="hero-scroll-cue flex-col z-10 sticky bottom-2 gap-0" href="#about" aria-label="<?php esc_attr_e('Scroll down to about section', 'planetario-tailpress'); ?>">
+		<span><?php esc_html_e('Scroll down', 'planetario-tailpress'); ?></span>
+		<i data-lucide="chevrons-down" class="icon" aria-hidden="true"></i>
+	</a>
 
 </section>
 
