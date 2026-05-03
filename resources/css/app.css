@@ -564,7 +564,7 @@ textarea {
 	margin-top: 24px;
 	font-weight: 600;
 	line-height: 1.02;
-	@apply text-center xl:text-left text-4xl md:text-5xl lg:text-6xl;
+	@apply text-center xl:text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
 }
 
 .hero h1 em,
@@ -584,7 +584,7 @@ textarea {
 }
 
 .hero__actions {
-	gap: 12px;
+	gap: 16px;
 	margin-top: 40px;
 	@apply flex flex-wrap items-center justify-center xl:justify-start;
 }
