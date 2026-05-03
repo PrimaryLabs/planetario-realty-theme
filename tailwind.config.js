@@ -1,3 +1,8 @@
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+const tailwindcssMotion = require('tailwindcss-motion');
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -71,5 +76,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [tailwindcssMotion],
 };
