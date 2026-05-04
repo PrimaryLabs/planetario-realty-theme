@@ -519,6 +519,10 @@ textarea {
 	}
 }
 
+.trust-indicators-mobile-carousel {
+	display: none;
+}
+
 .signal-pill,
 .compliance-pill {
 	display: inline-flex;
@@ -646,6 +650,38 @@ textarea {
 	50% {
 		opacity: 1;
 		translate: -50% 6px;
+	}
+}
+
+@keyframes trust-indicator-mobile-cycle {
+	0%,
+	23% {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+
+	25%,
+	100% {
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(8px);
+	}
+}
+
+@keyframes trust-indicator-dot-cycle {
+	0%,
+	23% {
+		background: var(--emerald-soft);
+		opacity: 1;
+		scale: 1.35;
+	}
+
+	25%,
+	100% {
+		background: rgba(255, 255, 255, 0.42);
+		opacity: 0.7;
+		scale: 1;
 	}
 }
 
@@ -1632,6 +1668,77 @@ textarea {
 		padding-block: 74px 56px;
 	}
 
+	.trust-indicators-list {
+		display: none;
+	}
+
+	.trust-indicators-mobile-carousel {
+		position: relative;
+		display: block;
+		width: min(100%, 22rem);
+		min-height: 118px;
+		margin: 26px auto 0;
+		pointer-events: none;
+	}
+
+	.trust-indicators-mobile-slide {
+		position: absolute;
+		inset: 0 0 auto;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(8px);
+		animation: trust-indicator-mobile-cycle 12s ease-in-out infinite;
+	}
+
+	.trust-indicators-mobile-slide:nth-child(2) {
+		animation-delay: 3s;
+	}
+
+	.trust-indicators-mobile-slide:nth-child(3) {
+		animation-delay: 6s;
+	}
+
+	.trust-indicators-mobile-slide:nth-child(4) {
+		animation-delay: 9s;
+	}
+
+	.trust-indicator-card--mobile {
+		width: 100%;
+	}
+
+	.trust-indicators-mobile-dots {
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		translate: -50% 0;
+	}
+
+	.trust-indicators-mobile-dot {
+		display: block;
+		width: 6px;
+		height: 6px;
+		border-radius: 999px;
+		background: rgba(255, 255, 255, 0.42);
+		opacity: 0.7;
+		animation: trust-indicator-dot-cycle 12s ease-in-out infinite;
+	}
+
+	.trust-indicators-mobile-dot:nth-child(2) {
+		animation-delay: 3s;
+	}
+
+	.trust-indicators-mobile-dot:nth-child(3) {
+		animation-delay: 6s;
+	}
+
+	.trust-indicators-mobile-dot:nth-child(4) {
+		animation-delay: 9s;
+	}
+
 	.about-hero,
 	.about-hero__inner {
 		min-height: 64svh;
@@ -1716,5 +1823,30 @@ textarea {
 		animation: none;
 		opacity: 1;
 		translate: -50% 0;
+	}
+
+	.trust-indicators-mobile-slide {
+		animation: none;
+		opacity: 0;
+		visibility: hidden;
+		transform: none;
+	}
+
+	.trust-indicators-mobile-slide:first-child {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.trust-indicators-mobile-dot {
+		animation: none;
+		background: rgba(255, 255, 255, 0.42);
+		opacity: 0.7;
+		scale: 1;
+	}
+
+	.trust-indicators-mobile-dot:first-child {
+		background: var(--emerald-soft);
+		opacity: 1;
+		scale: 1.35;
 	}
 }

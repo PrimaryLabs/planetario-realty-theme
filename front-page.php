@@ -197,7 +197,7 @@ $journal_posts = [
 				<a class="button button--ghost group-hover:!animate-none" href="#developers"><?php esc_html_e('Explore Properties', 'planetario-tailpress'); ?></a>
 			</div>
 		</div>
-		<div class="xl:absolute xl:top-0 w-full flex items-center justify-center xl:justify-end xl:h-full right-0 xl:pr-10 bottom-4 pt-10 xl:pt-0 pointer-events-none pb-5">
+		<div class="trust-indicators-list xl:absolute xl:top-0 w-full flex items-center justify-center xl:justify-end xl:h-full right-0 xl:pr-10 bottom-4 pt-10 xl:pt-0 pointer-events-none pb-5">
 			<!-- TRUST INDICATORS LIST -->
 			<div class=" grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-2 lg:gap-y-8">
 				<?php foreach ($trust_indicators as $index => $indicator) : ?>
@@ -208,6 +208,25 @@ $journal_posts = [
 							<p class="!text-[10.5px] xl:!text-xs text-gray-300 !m-0 !text-left tracking-wide leading"><?php echo esc_html($indicator['copy']); ?></p>
 						</div>
 					</div>
+				<?php endforeach; ?>
+			</div>
+		</div>
+		<div class="trust-indicators-mobile-carousel" aria-label="<?php esc_attr_e('Trust indicators carousel', 'planetario-tailpress'); ?>">
+			<!-- TRUST INDICATORS MOBILE CAROUSEL -->
+			<?php foreach ($trust_indicators as $index => $indicator) : ?>
+				<div class="trust-indicators-mobile-slide">
+					<div class="trust-indicator-card trust-indicator-card--mobile">
+						<div class="icon-badge !mb-0" aria-hidden="true"><i data-lucide="<?php echo esc_attr($indicator['icon']); ?>" class="icon icon--feature"></i></div>
+						<div class="flex-col">
+							<h4 class="font-sora font-bold text-xs !m-0"><?php echo esc_html($indicator['title']); ?></h4>
+							<p class="!text-[10.5px] text-gray-300 !m-0 !text-left tracking-wide leading"><?php echo esc_html($indicator['copy']); ?></p>
+						</div>
+					</div>
+				</div>
+			<?php endforeach; ?>
+			<div class="trust-indicators-mobile-dots" aria-hidden="true">
+				<?php foreach ($trust_indicators as $index => $indicator) : ?>
+					<span class="trust-indicators-mobile-dot"></span>
 				<?php endforeach; ?>
 			</div>
 		</div>
