@@ -190,7 +190,7 @@ $journal_posts = [
 				<span class="border-b border-b-slate-200 w-1/3 absolute right-1/3 xl:left-0 translate-x--full bottom-0 opacity-25"></span>
 			</div>
 			<h1 class="motion-preset-slide-up motion-opacity-in-0 motion-duration-700 motion-delay-150"><?php esc_html_e("Commited to Change People's Lives", 'planetario-tailpress'); ?> <em><?php esc_html_e('for Progress.', 'planetario-tailpress'); ?></em></h1>
-			<p class="mx-auto xl:mx-0 motion-preset-slide-up motion-opacity-in-0 motion-duration-700 motion-delay-300 !leading-6 md:!leading-7"><?php esc_html_e('Planetario Realty connects Filipino families and discerning investors with extraordinary properties from trusted developers, guided by a team that treats every transaction as a long-term relationship.', 'planetario-tailpress'); ?></p>
+			<p class="mx-auto xl:mx-0 motion-preset-slide-up motion-opacity-in-0 motion-duration-700 motion-delay-300"><?php esc_html_e('Planetario Realty connects Filipino families and discerning investors with extraordinary properties from trusted developers, guided by a team that treats every transaction as a long-term relationship.', 'planetario-tailpress'); ?></p>
 			<div class="hero__actions motion-preset-slide-up motion-opacity-in-0 motion-duration-700 motion-delay-500 group">
 				<!-- CTA Buttons -->
 				<a class="button button--primary group-hover:!animate-none" href="#contact"><?php esc_html_e('Book a Consultation', 'planetario-tailpress'); ?><i data-lucide="arrow-right" class="icon icon--button" aria-hidden="true"></i></a>
