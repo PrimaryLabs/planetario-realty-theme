@@ -32,11 +32,7 @@
 		<div class="site-header__inner">
 			<div class="brand mr-auto">
 
-				<?php if (has_custom_logo()) : ?>
-					<?php the_custom_logo(); ?>
-				<?php else : ?>
-					<img class="brand__logo" src="<?php echo planetario_tailpress_image('logo-RPce9ZQs.jpeg'); ?>" alt="<?php esc_attr_e('Planetario Realty and Brokerage Services', 'planetario-tailpress'); ?>">
-				<?php endif; ?>
+				<img class="brand__logo" src="<?php echo planetario_tailpress_image('logo-333x333.png'); ?>" alt="<?php esc_attr_e('Planetario Realty and Brokerage Services', 'planetario-tailpress'); ?>" width="44" height="44" />
 				<a href="<?php echo esc_url(home_url('/')); ?>" aria-label="<?php esc_attr_e('Planetario Realty home', 'planetario-tailpress'); ?>">
 					<span class="brand__text">
 						<span class="brand__name"><?php esc_html_e('Planetario Realty', 'planetario-tailpress'); ?></span>

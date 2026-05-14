@@ -228,3 +228,11 @@ function planetario_tailpress_image(string $filename): string
 {
 	return esc_url(get_theme_file_uri('resources/images/' . ltrim($filename, '/')));
 }
+
+function planetario_tailpress_load_acf_fields(): void
+{
+	foreach (glob(get_theme_file_path('acf-fields/*.php')) ?: [] as $file) {
+		require_once $file;
+	}
+}
+add_action('acf/init', 'planetario_tailpress_load_acf_fields');

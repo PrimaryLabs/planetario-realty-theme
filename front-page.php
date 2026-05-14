@@ -58,6 +58,39 @@ $features = [
 	],
 ];
 
+$services = [
+	[
+		'icon'  => 'land-plot',
+		'title' => __('Property Sales', 'planetario-tailpress'),
+		'copy'  => __('Lot only residential and commercial properties, house and lot, condominium, and condotel opportunities.', 'planetario-tailpress'),
+	],
+	[
+		'icon'  => 'handshake',
+		'title' => __('Real Estate Brokerage Services', 'planetario-tailpress'),
+		'copy'  => __('Licensed representation for buyers, sellers, and investors across every stage of the deal.', 'planetario-tailpress'),
+	],
+	[
+		'icon'  => 'megaphone',
+		'title' => __('Property Marketing and Listings', 'planetario-tailpress'),
+		'copy'  => __('Strategic listing preparation, market positioning, and qualified buyer matching.', 'planetario-tailpress'),
+	],
+	[
+		'icon'  => 'chart-no-axes-combined',
+		'title' => __('Investment Consultation', 'planetario-tailpress'),
+		'copy'  => __('Practical guidance on location fundamentals, yield assumptions, payment terms, and long-term value.', 'planetario-tailpress'),
+	],
+	[
+		'icon'  => 'file-check-2',
+		'title' => __('Documentation and Transaction Assistance', 'planetario-tailpress'),
+		'copy'  => __('Clear coordination for requirements, contracts, signatures, payment milestones, and closing documents.', 'planetario-tailpress'),
+	],
+	[
+		'icon'  => 'map-pinned',
+		'title' => __('Property Tripping and Site Tours', 'planetario-tailpress'),
+		'copy'  => __('Guided property visits and site tours arranged around your shortlist, timeline, and buying goals.', 'planetario-tailpress'),
+	],
+];
+
 $team = [
 	[
 		'image' => 'team1-BCz3YlXd.jpg',
@@ -82,6 +115,30 @@ $team = [
 		'name'  => 'Miguel Reyes',
 		'role'  => __('Investment Advisor', 'planetario-tailpress'),
 		'bio'   => __('Focused on yield, location fundamentals, and real numbers behind pre-selling opportunities.', 'planetario-tailpress'),
+	],
+];
+$featured_team_member = $team[0] ?? null;
+$support_team_members = array_slice($team, 1);
+$team_feature_stats = [
+	[
+		['value' => '18+', 'label' => __('Years closing deals', 'planetario-tailpress')],
+		['value' => 'PRC', 'label' => __('Licensed leadership', 'planetario-tailpress')],
+		['value' => '1:1', 'label' => __('Guided client care', 'planetario-tailpress')],
+	],
+	[
+		['value' => __('Deals', 'planetario-tailpress'), 'label' => __('Negotiation strategy', 'planetario-tailpress')],
+		['value' => __('Ops', 'planetario-tailpress'), 'label' => __('Developer coordination', 'planetario-tailpress')],
+		['value' => __('Buyers', 'planetario-tailpress'), 'label' => __('End-to-end support', 'planetario-tailpress')],
+	],
+	[
+		['value' => __('OFW', 'planetario-tailpress'), 'label' => __('Remote buyer guidance', 'planetario-tailpress')],
+		['value' => __('Tours', 'planetario-tailpress'), 'label' => __('Shortlist planning', 'planetario-tailpress')],
+		['value' => __('Care', 'planetario-tailpress'), 'label' => __('First-time buyer help', 'planetario-tailpress')],
+	],
+	[
+		['value' => __('Yield', 'planetario-tailpress'), 'label' => __('Investment review', 'planetario-tailpress')],
+		['value' => __('Data', 'planetario-tailpress'), 'label' => __('Location fundamentals', 'planetario-tailpress')],
+		['value' => __('Growth', 'planetario-tailpress'), 'label' => __('Long-term value lens', 'planetario-tailpress')],
 	],
 ];
 
@@ -258,6 +315,27 @@ $journal_posts = [
 	</div>
 </section>
 
+<section id="services" class="section section--muted">
+	<div class="section-inner services-layout">
+		<div class="section-heading reveal">
+			<p class="eyebrow"><?php esc_html_e('Our Services', 'planetario-tailpress'); ?></p>
+			<h2><?php esc_html_e('Focused support for every', 'planetario-tailpress'); ?> <em><?php esc_html_e('property decision.', 'planetario-tailpress'); ?></em></h2>
+			<p><?php esc_html_e('From your first shortlist to final documents, our team keeps the process clear, organized, and aligned with your goals.', 'planetario-tailpress'); ?></p>
+		</div>
+		<div class="services-list">
+			<?php foreach ($services as $service) : ?>
+				<article class="service-item reveal">
+					<div class="icon-badge service-item__icon" aria-hidden="true"><i data-lucide="<?php echo esc_attr($service['icon']); ?>" class="icon icon--feature"></i></div>
+					<div>
+						<h3><?php echo esc_html($service['title']); ?></h3>
+						<p><?php echo esc_html($service['copy']); ?></p>
+					</div>
+				</article>
+			<?php endforeach; ?>
+		</div>
+	</div>
+</section>
+
 <section id="mission-vision" class="section section--navy">
 	<div class="ambient ambient--left"></div>
 	<div class="ambient ambient--right"></div>
@@ -283,25 +361,75 @@ $journal_posts = [
 
 <section id="team" class="section section--muted">
 	<div class="section-inner">
-		<div class="section-lead reveal">
-			<div>
+		<div class="team-heading reveal">
+			<div class="team-heading__copy">
 				<p class="eyebrow"><?php esc_html_e('Our Team', 'planetario-tailpress'); ?></p>
-				<h2><?php esc_html_e('The people behind every key.', 'planetario-tailpress'); ?></h2>
+				<h2>
+					<span><?php esc_html_e('People who make', 'planetario-tailpress'); ?></span>
+					<em><?php esc_html_e('property feel clear.', 'planetario-tailpress'); ?></em>
+				</h2>
 			</div>
-			<p><?php esc_html_e('A tight-knit team of licensed brokers and consultants, chosen as much for integrity as market knowledge.', 'planetario-tailpress'); ?></p>
+			<div class="team-heading__aside">
+				<p><?php esc_html_e('A founder-led group of brokers, consultants, and investment guides built for clear advice, responsive coordination, and long-term client care.', 'planetario-tailpress'); ?></p>
+				<div class="team-heading__proof" aria-label="<?php esc_attr_e('Team strengths', 'planetario-tailpress'); ?>">
+					<span><?php esc_html_e('Licensed', 'planetario-tailpress'); ?></span>
+					<span><?php esc_html_e('Responsive', 'planetario-tailpress'); ?></span>
+					<span><?php esc_html_e('Client-first', 'planetario-tailpress'); ?></span>
+				</div>
+			</div>
 		</div>
-		<div class="team-grid">
-			<?php foreach ($team as $member) : ?>
-				<article class="person-card reveal">
-					<figure><img src="<?php echo planetario_tailpress_image($member['image']); ?>" alt="<?php echo esc_attr($member['name']); ?>"></figure>
-					<div>
-						<h3><?php echo esc_html($member['name']); ?></h3>
-						<p class="role"><?php echo esc_html($member['role']); ?></p>
-						<p><?php echo esc_html($member['bio']); ?></p>
-					</div>
+
+		<?php if ($featured_team_member) : ?>
+			<div class="team-showcase">
+				<article class="team-feature-card team-feature-card--rotating reveal">
+					<?php foreach ($team as $index => $member) : ?>
+						<?php $member_stats = $team_feature_stats[$index] ?? $team_feature_stats[0]; ?>
+						<div class="team-feature-slide">
+							<figure class="team-feature-card__media">
+								<img src="<?php echo planetario_tailpress_image($member['image']); ?>" alt="<?php echo esc_attr($member['name']); ?>">
+							</figure>
+							<div class="team-feature-card__body">
+								<p class="eyebrow eyebrow--soft"><?php echo 0 === $index ? esc_html__('Founder-Led Guidance', 'planetario-tailpress') : esc_html__('Specialist Bench', 'planetario-tailpress'); ?></p>
+								<h3><?php echo esc_html($member['name']); ?></h3>
+								<p class="role"><?php echo esc_html($member['role']); ?></p>
+								<p><?php echo esc_html($member['bio']); ?></p>
+								<div class="team-feature-card__stats" aria-label="<?php esc_attr_e('Team highlights', 'planetario-tailpress'); ?>">
+									<?php foreach ($member_stats as $stat) : ?>
+										<span><strong><?php echo esc_html($stat['value']); ?></strong><?php echo esc_html($stat['label']); ?></span>
+									<?php endforeach; ?>
+								</div>
+							</div>
+						</div>
+					<?php endforeach; ?>
 				</article>
-			<?php endforeach; ?>
-		</div>
+
+				<div class="team-roster-panel reveal">
+					<div class="team-roster-panel__header">
+						<p class="eyebrow"><?php esc_html_e('Specialist Bench', 'planetario-tailpress'); ?></p>
+						<h3><?php esc_html_e('Right expert, right moment.', 'planetario-tailpress'); ?></h3>
+						<p><?php esc_html_e('Each inquiry is matched with the teammate best suited for negotiation, tours, documentation, or investment review.', 'planetario-tailpress'); ?></p>
+					</div>
+
+					<div class="team-roster-list">
+						<?php foreach ($support_team_members as $member) : ?>
+							<article class="team-roster-card">
+								<img src="<?php echo planetario_tailpress_image($member['image']); ?>" alt="<?php echo esc_attr($member['name']); ?>">
+								<div>
+									<h4><?php echo esc_html($member['name']); ?></h4>
+									<p><?php echo esc_html($member['role']); ?></p>
+								</div>
+								<i data-lucide="arrow-up-right" class="icon icon--button" aria-hidden="true"></i>
+							</article>
+						<?php endforeach; ?>
+					</div>
+
+					<div class="team-roster-panel__footer">
+						<span><?php esc_html_e('Brokers, managers, agents, and support staff working as one client desk.', 'planetario-tailpress'); ?></span>
+						<a class="button button--primary" href="<?php echo esc_url(home_url('/teams/')); ?>"><?php esc_html_e('Meet The Full Team', 'planetario-tailpress'); ?></a>
+					</div>
+				</div>
+			</div>
+		<?php endif; ?>
 	</div>
 </section>
 
@@ -419,17 +547,6 @@ $journal_posts = [
 			<button class="button button--primary" type="submit"><?php esc_html_e('Send Message', 'planetario-tailpress'); ?></button>
 			<p class="form-note" role="status" data-form-note></p>
 		</form>
-	</div>
-	<div class="footer-line section-inner">
-		<div class="footer-brand">
-			<img src="<?php echo planetario_tailpress_image('logo-RPce9ZQs.jpeg'); ?>" alt="">
-			<p><strong><?php esc_html_e('Planetario Realty', 'planetario-tailpress'); ?></strong><span><?php esc_html_e('2026 Planetario Realty and Brokerage Services Inc.', 'planetario-tailpress'); ?></span></p>
-		</div>
-		<div class="social-links">
-			<a href="#" aria-label="<?php esc_attr_e('Facebook', 'planetario-tailpress'); ?>">Fb</a>
-			<a href="#" aria-label="<?php esc_attr_e('Instagram', 'planetario-tailpress'); ?>">Ig</a>
-			<a href="#" aria-label="<?php esc_attr_e('LinkedIn', 'planetario-tailpress'); ?>">In</a>
-		</div>
 	</div>
 </section>
 
