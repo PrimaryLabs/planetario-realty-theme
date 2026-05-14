@@ -35,6 +35,20 @@ $trust_indicator_motion_delays = [
 	'motion-delay-500',
 	'motion-delay-700',
 ];
+$about_stats = [
+	['value' => '7+',   'label' => __('Years guiding families', 'planetario-tailpress')],
+	['value' => '5',    'label' => __('Bohol & Cebu areas served', 'planetario-tailpress')],
+	['value' => '100%', 'label' => __('PRC-licensed leadership', 'planetario-tailpress')],
+];
+
+$about_locations = [
+	'Panglao',
+	'Dauis',
+	'Tubigon',
+	'Samboan',
+	'Villa Regina Cebu',
+];
+
 $features = [
 	[
 		'icon'  => 'shield-check',
@@ -295,22 +309,71 @@ $journal_posts = [
 
 </section>
 
-<section id="about" class="section section--light">
-	<div class="section-inner split-layout">
-		<div class="section-heading reveal">
+<section id="about" class="section section--light about-section" aria-labelledby="about-title">
+	<div class="about-ambient" aria-hidden="true"></div>
+	<div class="section-inner about-layout">
+		<div class="about-intro reveal">
 			<p class="eyebrow"><?php esc_html_e('About Us', 'planetario-tailpress'); ?></p>
-			<h2><?php esc_html_e('Built on trust.', 'planetario-tailpress'); ?><br><em><?php esc_html_e('Measured in homes.', 'planetario-tailpress'); ?></em></h2>
-			<p><strong><?php esc_html_e('Planetario Realty and Brokerage Services Inc. (PRBSI)', 'planetario-tailpress'); ?></strong> <?php esc_html_e('was established in 2018 to engage in real estate development and marketing. Our projects are primarily located in Bohol and Cebu, particularly Panglao, Dauis, Tubigon, Samboan, and Villa Regina Cebu.', 'planetario-tailpress'); ?></p>
+			<h2 id="about-title"><?php esc_html_e('Built on trust.', 'planetario-tailpress'); ?><br><em><?php esc_html_e('Measured in homes.', 'planetario-tailpress'); ?></em></h2>
+			<p class="about-lede"><strong><?php esc_html_e('Planetario Realty and Brokerage Services Inc. (PRBSI)', 'planetario-tailpress'); ?></strong> <?php esc_html_e('was established in 2018 to engage in real estate development and marketing, with a focus on Bohol and Cebu communities.', 'planetario-tailpress'); ?></p>
+
+			<dl class="about-stats" aria-label="<?php esc_attr_e('Company highlights', 'planetario-tailpress'); ?>">
+				<?php foreach ($about_stats as $stat) : ?>
+					<div class="about-stat">
+						<dt><?php echo esc_html($stat['value']); ?></dt>
+						<dd><?php echo esc_html($stat['label']); ?></dd>
+					</div>
+				<?php endforeach; ?>
+			</dl>
+
 			<div class="compliance-pill"><span></span><?php esc_html_e('DHSUD, PRC, and HLURB compliant', 'planetario-tailpress'); ?></div>
+
+			<ul class="about-locations" aria-label="<?php esc_attr_e('Areas we serve', 'planetario-tailpress'); ?>">
+				<?php foreach ($about_locations as $location) : ?>
+					<li class="about-location-chip">
+						<i data-lucide="map-pin" class="icon" aria-hidden="true"></i>
+						<span><?php echo esc_html($location); ?></span>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+
+			<div class="about-cta-group">
+				<a class="button button--primary about-cta" href="#contact">
+					<?php esc_html_e('Book a Consultation', 'planetario-tailpress'); ?>
+					<i data-lucide="arrow-right" class="icon icon--button" aria-hidden="true"></i>
+				</a>
+				<a class="about-cta-secondary" href="#team">
+					<?php esc_html_e('Meet the team', 'planetario-tailpress'); ?>
+					<i data-lucide="arrow-up-right" class="icon icon--button" aria-hidden="true"></i>
+				</a>
+			</div>
 		</div>
-		<div class="feature-grid">
-			<?php foreach ($features as $feature) : ?>
-				<article class="feature-card reveal">
-					<div class="icon-badge" aria-hidden="true"><i data-lucide="<?php echo esc_attr($feature['icon']); ?>" class="icon icon--feature"></i></div>
-					<h3><?php echo esc_html($feature['title']); ?></h3>
-					<p class=""><?php echo nl2br($feature['copy']); ?></p>
-				</article>
-			<?php endforeach; ?>
+
+		<div class="about-visual">
+			<figure class="about-portrait reveal">
+				<img
+					src="<?php echo planetario_tailpress_image('team1-BCz3YlXd.jpg'); ?>"
+					alt="<?php esc_attr_e('Maria Liza Santos, Founder and Principal Broker of Planetario Realty', 'planetario-tailpress'); ?>"
+					loading="lazy"
+					decoding="async"
+					width="720"
+					height="495">
+				<figcaption class="about-portrait__caption">
+					<p class="eyebrow eyebrow--soft"><?php esc_html_e('Founder-Led', 'planetario-tailpress'); ?></p>
+					<strong>Maria Liza Santos</strong>
+					<span><?php esc_html_e('Founder & Principal Broker · PRC #0017823', 'planetario-tailpress'); ?></span>
+				</figcaption>
+			</figure>
+
+			<div class="about-feature-grid">
+				<?php foreach ($features as $index => $feature) : ?>
+					<article class="feature-card about-feature-card reveal" style="--about-feature-delay: <?php echo esc_attr(($index + 1) * 80); ?>ms;">
+						<div class="icon-badge" aria-hidden="true"><i data-lucide="<?php echo esc_attr($feature['icon']); ?>" class="icon icon--feature"></i></div>
+						<h3><?php echo esc_html($feature['title']); ?></h3>
+						<p><?php echo nl2br(esc_html($feature['copy'])); ?></p>
+					</article>
+				<?php endforeach; ?>
+			</div>
 		</div>
 	</div>
 </section>
